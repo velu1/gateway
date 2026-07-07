@@ -22,6 +22,7 @@ const proxy = (urlData: string) => {
     const portMapping: any = {
       "/baseServices": topic.server.user,
       "/incoming": topic.server.incoming,
+      "/traceability": topic.server.traceability,
     };
     return portMapping[urlData] || topic.server.incoming;
   }

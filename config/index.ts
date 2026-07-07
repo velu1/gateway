@@ -6,6 +6,7 @@ const config = {
     authPort: Number(process.env.SERVER_AUTH_PORT),
     user: process.env.SERVER_USER,
     incoming: process.env.SERVER_INCOMING,
+    traceability: process.env.SERVER_TRACEABILITY,
   },
 };
 
