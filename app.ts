@@ -29,6 +29,7 @@ require("./app/routes/users/user")(app);
 require("./app/routes/settings/settings")(app);
 require("./app/routes/incoming")(app);
 require("./app/routes/settings/printerConfigurations")(app);
+require("./app/routes/traceability")(app);
 const server = app.listen(topic.server.authPort, () => {
   console.log(`connected... ${topic.server.authPort}`);
 });
