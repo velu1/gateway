@@ -45,7 +45,10 @@ const proxy = (urlData: string) => {
       const tenantData = (req as any).tenantData;
 
       // Add tenant's MongoDB URI to header for backend usage
-      proxyReq.setHeader("x-tenant-mongodb-uri", "mongodb://localhost:27017/inventory");
+      proxyReq.setHeader(
+        "x-tenant-mongodb-uri",
+        process.env.MONGO_URI || "mongodb://localhost:27017/inventory"
+      );
       if (tenantData?.mongodbURI) {
         proxyReq.setHeader("x-tenant-code", tenantData.code);
         proxyReq.setHeader("x-keycloak-clientId", tenantData.keycloak.clientId);
